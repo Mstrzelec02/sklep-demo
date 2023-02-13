@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include('partials/head.ejs') %>
+        <title>Sklep internetowy - administracja</title>
+    </head>
+    <body>
+        <%- include('partials/navbar.ejs') %>
+        <div class="container pt-3">
+        <% if (error) { %>
+            <div class="alert alert-danger" role="alert">
+                Wprowadź poprawne dane!
+            </div>
+        <% } %>
+            <h1 class="mt-4 mb-4">Dodaj nowy produkt</h1>
+        <form action="/addproduct" method="post">
+            <div class="form-group">
+            <label for="productName">Nazwa produktu</label>
+            <input type="text" class="form-control" name="productName" id="productName" placeholder="np. Marchewka tarta :)">
+            </div>
+            <div class="form-group">
+            <label for="productQuantity">Liczba / Ilość</label>
+            <input type="number" class="form-control" name="productQuantity" id="productQuantity" placeholder="10">
+            </div>
+            <div class="form-group">
+            <label for="productPrice">Cena</label>
+            <input type="number" class="form-control" name="productPrice" id="productPrice" placeholder="12.20">
+            </div>
+            <div class="form-group">
+            <label for="accessPassword">Hasło administratora</label>
+            <input type="password" class="form-control" name="accessPassword" id="accessPassword">
+            </div>
+            <button type="submit" class="btn btn-primary mb-3 mt-4">Dodaj</button>
+        </form>
+        </div>
+    </body>
+</html>
